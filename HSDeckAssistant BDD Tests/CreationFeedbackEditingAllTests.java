@@ -15,11 +15,13 @@ import static org.apache.commons.lang3.StringUtils.join;
 
 @SuppressWarnings("deprecation")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class CreationFeedbackEditingAllTests {
+public class CreationFeedbackEditingAllTests 
+{
 	private static Selenium selenium;
 
 	@BeforeClass
-	public static void setUp() throws Exception {
+	public static void setUp() throws Exception 
+    {
 		WebDriver driver = new FirefoxDriver();
 		String baseUrl = "http://deliverable6test.appspot.com/";
 		selenium = new WebDriverBackedSelenium(driver, baseUrl);
@@ -37,7 +39,8 @@ public class CreationFeedbackEditingAllTests {
 	}
 
 	@Test
-	public void A_testAddCard() throws Exception {
+	public void A_testAddCard() throws Exception 
+    {
 		selenium.open("/");
 		selenium.click("xpath=(//img[@id='hero_select_img'])[5]");
 		selenium.waitForPageToLoad("30000");
@@ -46,7 +49,8 @@ public class CreationFeedbackEditingAllTests {
 	}
 	
 	@Test
-	public void B_testRemoveCard() throws Exception {
+	public void B_testRemoveCard() throws Exception 
+    {
 		selenium.open("/");
 		selenium.click("xpath=(//img[@id='hero_select_img'])[5]");
 		selenium.waitForPageToLoad("30000");
@@ -57,7 +61,8 @@ public class CreationFeedbackEditingAllTests {
 	}
 	
 	@Test
-	public void C_testDeckListTooSmall() throws Exception {
+	public void C_testDeckListTooSmall() throws Exception 
+    {
 		selenium.open("/");
 		selenium.click("xpath=(//img[@id='hero_select_img'])[5]");
 		selenium.waitForPageToLoad("30000");
@@ -84,7 +89,8 @@ public class CreationFeedbackEditingAllTests {
 	}
 	
 	@Test
-	public void D_testDeckListNoTitle() throws Exception {
+	public void D_testDeckListNoTitle() throws Exception 
+    {
 		selenium.open("/");
 		selenium.click("xpath=(//img[@id='hero_select_img'])[5]");
 		selenium.waitForPageToLoad("30000");
@@ -127,7 +133,8 @@ public class CreationFeedbackEditingAllTests {
 	}
 	
 	@Test
-	public void E_testSuccessfulCreation() throws Exception {
+	public void E_testSuccessfulCreation() throws Exception 
+    {
 		selenium.open("/");
 		selenium.click("xpath=(//img[@id='hero_select_img'])[5]");
 		selenium.waitForPageToLoad("30000");
@@ -172,7 +179,8 @@ public class CreationFeedbackEditingAllTests {
 	}
 	
 	@Test
-	public void F_testCommentOnDeckList() throws Exception {
+	public void F_testCommentOnDeckList() throws Exception 
+    {
 		selenium.open("/");
 		selenium.click("link=deliv6test");
 		selenium.waitForPageToLoad("30000");
@@ -186,7 +194,8 @@ public class CreationFeedbackEditingAllTests {
 	}
 	
 	@Test
-	public void G_testLikeDeckList() throws Exception {
+	public void G_testLikeDeckList() throws Exception 
+    {
 		selenium.open("/");
 		selenium.click("link=deliv6test");
 		selenium.waitForPageToLoad("30000");
@@ -199,7 +208,8 @@ public class CreationFeedbackEditingAllTests {
 	}
 	
 	@Test
-	public void H_testUnLikeDeckList() throws Exception {
+	public void H_testUnLikeDeckList() throws Exception 
+    {
 		selenium.open("/");
 		selenium.click("link=deliv6test");
 		selenium.waitForPageToLoad("30000");
@@ -213,7 +223,8 @@ public class CreationFeedbackEditingAllTests {
 	}
 	
 	@Test
-	public void I_testOpenCorrectEditPage() throws Exception {
+	public void I_testOpenCorrectEditPage() throws Exception 
+    {
 		selenium.open("/");
 		selenium.click("link=deliv6test");
 		selenium.waitForPageToLoad("30000");
@@ -228,7 +239,8 @@ public class CreationFeedbackEditingAllTests {
 	}
 	
 	@Test
-	public void J_testEditTitle() throws Exception {
+	public void J_testEditTitle() throws Exception 
+    {
 		selenium.open("/");
 		selenium.click("link=deliv6test");
 		selenium.waitForPageToLoad("30000");
