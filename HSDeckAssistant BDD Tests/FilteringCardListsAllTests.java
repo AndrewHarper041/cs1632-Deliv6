@@ -1,3 +1,7 @@
+/*
+ * Tests from US-3
+ */
+
 import com.thoughtworks.selenium.Selenium;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.WebDriver;
@@ -27,6 +31,7 @@ public class FilteringCardListsAllTests {
 		selenium = new WebDriverBackedSelenium(driver, baseUrl);
 	}
 
+	//US-3 ScenarioA test
 	@Test
 	public void testFilterByName() throws Exception {
 		selenium.open("/deckbuilder?class=Priest");
@@ -36,6 +41,7 @@ public class FilteringCardListsAllTests {
 		assertTrue(selenium.getText("//div[@id='object']/a").matches("^[\\s\\S]*Circle of Healing[\\s\\S]*$"));
 	}
 	
+	//US-3 ScenarioB test
 	@Test
 	public void testFilterByType() throws Exception {
 		selenium.open("/deckbuilder?class=Rogue");
@@ -48,6 +54,7 @@ public class FilteringCardListsAllTests {
 		assertTrue(selenium.getText("//div[@id='object']/a[4]").matches("^[\\s\\S]*Weapon[\\s\\S]*$"));
 	}
 	
+	//US-3 ScenarioC test
 	@Test
 	public void testFilterByTribe() throws Exception {
 		selenium.open("/deckbuilder?class=Priest");
@@ -60,6 +67,7 @@ public class FilteringCardListsAllTests {
 		assertTrue(selenium.getText("id=object").matches("^[\\s\\S]*Murloc[\\s\\S]*$"));
 	}
 	
+	//US-3 ScenarioD test
 	@Test
 	public void testFilterByMechanics() throws Exception {
 		selenium.open("/deckbuilder?class=Priest");
@@ -72,6 +80,7 @@ public class FilteringCardListsAllTests {
 		assertTrue(selenium.getText("id=object").matches("^[\\s\\S]*u'Deathrattle'[\\s\\S]*$"));
 	}
 	
+	//US-3 ScenarioE test
 	@Test
 	public void testFilterByClassNeutral() throws Exception {
 		selenium.open("/deckbuilder?class=Priest");

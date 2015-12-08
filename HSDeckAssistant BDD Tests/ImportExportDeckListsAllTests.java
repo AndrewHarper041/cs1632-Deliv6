@@ -1,3 +1,7 @@
+/*
+ * Tests from US-6
+ */
+
 import com.thoughtworks.selenium.Selenium;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.WebDriver;
@@ -21,14 +25,17 @@ public class ImportExportDeckListsAllTests {
 	private static Selenium selenium;
 
 	@BeforeClass
-	public static void setUp() throws Exception {
+	public static void setUp() throws Exception 
+	{
 		WebDriver driver = new FirefoxDriver();
 		String baseUrl = "http://deliverable6test.appspot.com/";
 		selenium = new WebDriverBackedSelenium(driver, baseUrl);
 	}
 
+	//US-6 ScenarioA test
 	@Test
-	public void testImportValidList() throws Exception {
+	public void testImportValidList() throws Exception 
+	{
 		selenium.open("/");
 		selenium.click("xpath=(//img[@id='hero_select_img'])[5]");
 		selenium.waitForPageToLoad("30000");
@@ -41,8 +48,10 @@ public class ImportExportDeckListsAllTests {
 		assertEquals("Ysera", selenium.getText("xpath=(//a[@id='tooltip-container']/div[2]/div[2])[20]"));
 	}
 	
+	//US-6 ScenarioB test
 	@Test
-	public void testImportOversizedList() throws Exception {
+	public void testImportOversizedList() throws Exception 
+	{
 		selenium.open("/");
 		selenium.click("xpath=(//img[@id='hero_select_img'])[5]");
 		selenium.waitForPageToLoad("30000");
@@ -56,8 +65,10 @@ public class ImportExportDeckListsAllTests {
 		assertEquals("Ysera", selenium.getText("xpath=(//a[@id='tooltip-container']/div[2]/div[2])[20]"));
 	}
 	
+	//US-6 ScenarioC test
 	@Test
-	public void testImportInvalidList() throws Exception {
+	public void testImportInvalidList() throws Exception 
+	{
 		selenium.open("/");
 		selenium.click("xpath=(//img[@id='hero_select_img'])[5]");
 		selenium.waitForPageToLoad("30000");
@@ -74,8 +85,10 @@ public class ImportExportDeckListsAllTests {
 		assertTrue(selenium.getText("id=inner_list").matches("^[\\s\\S]*Deathwing[\\s\\S]*$"));
 	}
 	
+	//US-6 ScenarioD test
 	@Test
-	public void testExportDeckList() throws Exception {
+	public void testExportDeckList() throws Exception 
+	{
 		selenium.open("/");
 		selenium.click("xpath=(//img[@id='hero_select_img'])[5]");
 		selenium.waitForPageToLoad("30000");
@@ -101,7 +114,8 @@ public class ImportExportDeckListsAllTests {
 	}
 	
 	@AfterClass
-	public static void tearDown() throws Exception {
+	public static void tearDown() throws Exception 
+	{
 		selenium.stop();
 	}
 	

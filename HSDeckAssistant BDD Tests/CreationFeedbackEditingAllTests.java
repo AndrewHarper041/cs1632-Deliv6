@@ -1,3 +1,7 @@
+/*
+ * Tests from US-2, US-4, US-5
+ */
+
 import com.thoughtworks.selenium.Selenium;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.WebDriver;
